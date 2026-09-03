@@ -1,6 +1,12 @@
 package hexlet.code.schemas;
 
-public final class StringSchema extends BaseSchema<String, StringSchema> {
+public final class StringSchema extends BaseSchema<String> {
+
+    @Override
+    public StringSchema required() {
+        super.required();
+        return this;
+    }
 
     @Override
     protected boolean isMissing(String value) {

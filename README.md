@@ -10,7 +10,9 @@
 
 ## Стек
 
-- Java
+- Java 21
+- Gradle
+- JUnit 5
 
 ## Установка
 
@@ -22,7 +24,32 @@ make build
 
 ## Использование
 
-<!-- Добавьте примеры запуска и запись asciinema — именно это смотрит работодатель -->
+Библиотека проверяет строки, числа и объекты `Map` (включая проверку значений
+по ключам через `shape()`) через fluent-интерфейс:
+
+```java
+import hexlet.code.Validator;
+
+var v = new Validator();
+var schema = v.string().required().minLength(5).contains("hex");
+
+schema.isValid("hexlet"); // true
+schema.isValid("java");   // false
+```
+
+Запустить тот же пример:
+
+```bash
+cd app
+make run
+```
+
+Прогнать тесты:
+
+```bash
+cd app
+make test
+```
 
 ---
 
